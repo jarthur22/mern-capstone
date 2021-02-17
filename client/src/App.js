@@ -1,27 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
 import axios from 'axios';
+import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
+import "../node_modules/font-awesome/css/font-awesome.min.css";
+import Home from './components/home/Home';
+import Stack from './components/stack/Stack';
 
 axios.defaults.baseURL = `${window.location.origin.includes('mern-capstone') ? window.location.origin : 'http://localhost:5000'}`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header/>
+      <Route exact path="/" component={Home}/>
+      <Route path="/stack" component={Stack}/>
+      <Footer/>
+    </Router>
   );
 }
 
