@@ -1,13 +1,30 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import BackendPageScreen from './BackendPageScreen';
+import Markdown from '../Markdown';
 import BackendSideMenu from './BackendSideMenu';
 
-//import default page ref
+//import default page refs
+import ServerOverview from './pages/Server.Overview.md';
 import APIOverview from './pages/API.Overview.md';
 
-const Backend = () => {
-    const [currentPage, setCurrentPage] = useState(APIOverview);
+const Backend = ({activeSection, setActiveSection}) => {
+    const [currentPage, setCurrentPage] = useState(activeSection ? activeSection === '' ? ServerOverview : APIOverview : ServerOverview);
+
+    //this really just needs to all be handled in redux. Get on it.
+    useEffect(() => {
+        if(activeSection){
+            switch (activeSection) {
+                case 'server':
+                    setCurrentPage(ServerOverview);
+                    break;
+                case 'api':
+                    setCurrentPage(APIOverview);
+                    break;
+                default:
+                    break;
+            }
+        }
+    }, [activeSection])
 
     const handlePageChange = (page) => {
         setCurrentPage(page);
@@ -17,10 +34,14 @@ const Backend = () => {
         <Container style={{padding: '0'}}>
             <Row>
                 <Col style={{maxWidth: '25vw', padding: '0', maxHeight: '100vh', overflowY: 'scroll'}}>
-                    <BackendSideMenu handlePageChange={handlePageChange}/>
+                    <BackendSideMenu 
+                        activeSection={activeSection} 
+                        setActiveSection={setActiveSection} 
+                        handlePageChange={handlePageChange}
+                    />
                 </Col>
                 <Col style={{maxHeight: '100vh', overflowY: 'scroll'}}>
-                    <BackendPageScreen page={currentPage}/>
+                    <Markdown page={currentPage}/>
                 </Col>
             </Row>
         </Container>

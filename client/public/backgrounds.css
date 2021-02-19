@@ -1,0 +1,47 @@
+.stack-page-nav-backend {
+    padding: 2rem;
+    border: 2px solid lightgray;
+    background-image: url('images/stack-backend-dark.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-weight: bold;
+    font-size: large;
+    transition: 0.3s;
+}.stack-page-nav-backend:hover {
+    background-image: url('images/stack-backend.jpg');
+    background-size: cover;
+}
+.stack-page-nav-backend.active {background-image: url('images/stack-backend.jpg');}
+
+.stack-page-nav-frontend {
+    padding: 2rem;
+    border: 2px solid lightgray;
+    background-image: url('images/stack-frontend-dark.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-weight: bold;
+    font-size: large;
+    transition: 0.3s;
+}.stack-page-nav-frontend:hover {
+    background-image: url('images/stack-frontend.jpg');
+    background-size: cover;
+}
+.stack-page-nav-frontend.active {background-image: url('images/stack-frontend.jpg');}
+
+.stack-page-nav-hosting {
+    padding: 2rem;
+    border: 2px solid lightgray;
+    background-image: url('images/stack-hosting-dark.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-weight: bold;
+    font-size: large;
+    transition: 0.5s;
+}.stack-page-nav-hosting:hover {
+    background-image: url('images/stack-hosting.jpg');
+    background-size: cover;
+}
+.stack-page-nav-hosting.active {background-image: url('images/stack-hosting.jpg');}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 
-const BackendPageScreen = ({page, renderers}) => {
+const Markdown = ({page, renderers}) => {
     const [markdown, setMarkdown] = useState("");
 
     useEffect(() => {
@@ -15,4 +15,4 @@ const BackendPageScreen = ({page, renderers}) => {
     )
 }
 
-export default BackendPageScreen
+export default Markdown;

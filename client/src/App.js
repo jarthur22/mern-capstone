@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route} from 'react-router-dom';
 import "../node_modules/font-awesome/css/font-awesome.min.css";
 import Home from './components/home/Home';
 import Stack from './components/stack/Stack';
+import './App.css'
 
 axios.defaults.baseURL = `${window.location.origin.includes('mern-capstone') ? window.location.origin : 'http://localhost:5000'}`;
 
@@ -13,7 +14,7 @@ function App() {
     <Router>
       <Header/>
       <Route exact path="/" component={Home}/>
-      <Route path="/stack" component={Stack}/>
+      <Route path="/stack/:page?" component={Stack}/>
       <Footer/>
     </Router>
   );

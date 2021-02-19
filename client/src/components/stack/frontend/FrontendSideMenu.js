@@ -43,4 +43,28 @@ const FrontendSideMenu = () => {
     )
 }
 
+const MenuSection = ({eventKey, title, children}) => {
+    return (
+        <Card>
+            <Accordion.Toggle as={Card.Header} eventKey={eventKey}>{title}</Accordion.Toggle>
+            <Accordion.Collapse eventKey={eventKey}>
+                <Card.Body style={{padding: '0'}}>
+                    <ListGroup variant="flush">
+                        {children}
+                    </ListGroup>
+                </Card.Body>
+            </Accordion.Collapse>
+        </Card>
+    )
+};
+
+const MenuItem = ({onClick, children}) => {
+    return (
+        <ListGroup.Item
+            action
+            onClick={onClick}
+        >&nbsp;&nbsp;{children}</ListGroup.Item>
+    )
+}
+
 export default FrontendSideMenu
