@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Container, Nav, Row, Tab } from 'react-bootstrap'
 import Backend from './backend/Backend'
+import Frontend from './frontend/Frontend'
 
 const Stack = () => {
     const [key, setKey] = useState('backend')
@@ -23,13 +24,13 @@ const Stack = () => {
                         </Nav.Item>
                     </Nav>
                 </Row>
-                <Row>
-                    <Tab.Content>
+                <Row style={{marginLeft: '0px', marginRight: '0px'}}>
+                    <Tab.Content style={{width: '100%'}}>
                         <Tab.Pane eventKey="backend">
                             <Backend/>
                         </Tab.Pane>
                         <Tab.Pane eventKey="frontend">
-                            The frontend
+                            <Frontend/>
                         </Tab.Pane>
                         <Tab.Pane eventKey="hosting">
                             The hosting and dev ops

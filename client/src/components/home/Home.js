@@ -23,7 +23,7 @@ const Home = () => {
                   <Card.Text>
                     Get an in-depth look at how this app functions: back to front.
                   </Card.Text>
-                  <Card.Link href="/Stack">Explore...</Card.Link>
+                  <Card.Link href="/stack">Explore...</Card.Link>
                 </Card.Body>
               </Card>
             </Col>
