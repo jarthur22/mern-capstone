@@ -6,6 +6,7 @@ import "../node_modules/font-awesome/css/font-awesome.min.css";
 import Home from './components/home/Home';
 import Stack from './components/stack/Stack';
 import './App.css'
+import About from './components/about/About';
 
 axios.defaults.baseURL = `${window.location.origin.includes('mern-capstone') ? window.location.origin : 'http://localhost:5000'}`;
 
@@ -15,6 +16,7 @@ function App() {
       <Header/>
       <Route exact path="/" component={Home}/>
       <Route path="/stack/:page?" component={Stack}/>
+      <Route path="/about" component={About}/>
       <Footer/>
     </Router>
   );
