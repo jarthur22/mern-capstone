@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
+import {useSelector} from 'react-redux';
 
-const Markdown = ({page, renderers}) => {
+const Markdown = () => {
     const [markdown, setMarkdown] = useState("");
+    const stackDetails = useSelector(state => state.stackDetails);
+    const {page} = stackDetails;
 
     useEffect(() => {
         page && fetch(page).then((res) => res.text()).then((text) => setMarkdown(text));
@@ -10,7 +13,7 @@ const Markdown = ({page, renderers}) => {
 
     return (
         <>
-            <ReactMarkdown children={markdown} renderers={renderers}/>
+            <ReactMarkdown children={markdown}/>
         </>
     )
 }

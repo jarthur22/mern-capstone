@@ -44,7 +44,7 @@ const About = () => {
                                         <Image style={{width: '20px', marginLeft: '-5px'}} src={`${process.env.PUBLIC_URL}/images/discord.svg`} />&nbsp;Discord:
                                     </Col>
                                     <Col>
-                                        <Card.Link href="https://discordapp.com/users/411189127812349963/">Ruah</Card.Link>
+                                        <Card.Link href="https://discordapp.com/users/411189127812349963/">Ruah#1562</Card.Link>
                                     </Col>
                                 </Row>
                             </ListGroup.Item>
@@ -57,14 +57,15 @@ const About = () => {
                     &nbsp;&nbsp;&nbsp;Hey, I'm Jake! I'm a self-taught web developer. I've been
                     programming since my first scientific calculator, a Texas Instruments
                     TI-84 that let you program in TI-BASIC. Since then I excelled at Java in 
-                    high school and did a little Python in college that I am proud of.
+                    high school and did a little Python and C# in college that I am proud of.
                 </p>
                 <p> 
                     &nbsp;&nbsp;&nbsp;But my real success has come with web development-- I learned a little of the basics
                     in college, and watched a TON of Youtube tutorials to learn Node, React, Redux,
-                    MongoDB, and other technologies. Now I can put a simple professional website together
-                    in a few days. I also write Discord bots for fun! Check out my Github for a list
-                    of my (public) projects!
+                    MongoDB, PHP, and other technologies. I've carried these skills over to my "big boy job":
+                    I work in IT but they've had me make web apps and a Wordpress "plugin" as well.
+                     Now I can put a simple professional website together in a few days. I also write Discord 
+                     bots for fun! Check out my Github for a list of my (public) projects!
                 </p>
             </Row>
         </Container>
