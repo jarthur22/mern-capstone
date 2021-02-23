@@ -7,6 +7,7 @@ import Home from './components/home/Home';
 import Stack from './components/stack/Stack';
 import './App.css'
 import About from './components/about/About';
+import News from './components/news/News';
 
 axios.defaults.baseURL = `${window.location.origin.includes('mern-capstone') ? window.location.origin : 'http://localhost:5000'}`;
 
@@ -17,6 +18,7 @@ function App() {
       <Route exact path="/" component={Home}/>
       <Route path="/stack/:page?" component={Stack}/>
       <Route path="/about" component={About}/>
+      <Route path="/news" component={News}/>
       <Footer/>
     </Router>
   );
