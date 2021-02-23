@@ -5,6 +5,7 @@ import { Accordion, Card, Container, ListGroup } from 'react-bootstrap'
 import ServerOverview from './pages/Server.Overview.md';
 import APIOverview from './pages/API.Overview.md';
 import APIRoutes from './pages/API.Routes.md';
+import DatabaseOverview from './pages/Database.Overview.md';
 import { setPage, setSubSection } from '../../../actions/stackActions';
 import {useSelector, useDispatch} from 'react-redux';
 
@@ -31,7 +32,7 @@ const BackendSideMenu = () => {
                     <MenuItem onClick={() => dispatch(setPage(APIOverview))}>External APIs</MenuItem>
                 </MenuSection>
                 <MenuSection eventKey={"database"} title="Database" onClick={() => dispatch(setSubSection('database'))}>
-                    <MenuItem onClick={() => dispatch(setPage(APIOverview))}>Overview</MenuItem>
+                    <MenuItem onClick={() => dispatch(setPage(DatabaseOverview))}>Overview</MenuItem>
                     <MenuItem onClick={() => dispatch(setPage(APIOverview))}>NoSQL Databases</MenuItem>
                     <MenuItem onClick={() => dispatch(setPage(APIOverview))}>Mongoose</MenuItem>
                     <MenuItem onClick={() => dispatch(setPage(APIOverview))}>MongoDB Atlas</MenuItem>

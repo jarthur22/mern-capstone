@@ -2,9 +2,12 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const http = require('http');
+const dotenv = require('dotenv');
 const connectDB = require('./config/db');
+const newsRoutes = require('./routes/newsRoutes');
 
 //use middleware
+dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -13,7 +16,7 @@ app.use(cors());
 connectDB();
 
 //init api routes
-
+app.use('/api/news', newsRoutes);
 
 //all other api requests
 app.use('/api/*', (req, res, next) => {

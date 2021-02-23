@@ -7,6 +7,7 @@ import {useSelector, useDispatch} from 'react-redux';
 
 import ServerOverview from './backend/pages/Server.Overview.md';
 import APIOverview from './backend/pages/API.Overview.md';
+import DatabaseOverview from './backend/pages/Database.Overview.md';
 
 const Stack = ({match}) => {
     const sectionFromUrl = match.params.page ? match.params.page.split("-")[0] : "backend";
@@ -33,6 +34,9 @@ const Stack = ({match}) => {
                     break;
                 case 'api':
                     dispatch(setPage(APIOverview));
+                    break;
+                case 'database':
+                    dispatch(setPage(DatabaseOverview));
                     break;
                 default:
                     break;
