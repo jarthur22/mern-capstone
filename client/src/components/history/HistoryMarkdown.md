@@ -40,4 +40,4 @@ If you thought Javascript was lacking, once it got the ability to perform asynch
 
 ### jQuery and the Frameworks
 
-Now we get into the fun stuff.
+Now we get into the fun stuff. https://blog.bitsrc.io/a-brief-history-of-javascript-from-netscape-to-frameworks-74bf4774eeef
