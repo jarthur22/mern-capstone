@@ -8,6 +8,8 @@ import Stack from './components/stack/Stack';
 import './App.css'
 import About from './components/about/About';
 import News from './components/news/News';
+import BugReports from './components/bugs/BugReports';
+import History from './components/history/History';
 
 axios.defaults.baseURL = `${window.location.origin.includes('mern-capstone') ? window.location.origin : 'http://localhost:5000'}`;
 
@@ -19,6 +21,8 @@ function App() {
       <Route path="/stack/:page?" component={Stack}/>
       <Route path="/about" component={About}/>
       <Route path="/news" component={News}/>
+      <Route path="/report" component={BugReports}/>
+      <Route path="/history" component={History}/>
       <Footer/>
     </Router>
   );

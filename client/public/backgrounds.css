@@ -45,3 +45,7 @@
     background-size: cover;
 }
 .stack-page-nav-hosting.active {background-image: url('images/stack-hosting.jpg');}
+
+.page-link{
+    background-color: transparent;
+}

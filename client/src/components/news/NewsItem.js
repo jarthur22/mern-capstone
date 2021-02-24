@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios';
+import React from 'react'
 import { Col, Image, ListGroup, Row } from 'react-bootstrap'
 
 const NewsItem = ({article}) => {
-    const {author, content, description, publishedAt, source, title, url, urlToImage} = article;
-    const [thumbnail, setThumbnail] = useState(`${process.env.PUBLIC_URL}/images/image-not-found.png`);
+    const {description, publishedAt, title, url, urlToImage} = article;
     
     const brokenImageUrl = (e) => {
-        e.target.src = thumbnail;
+        e.target.src = `${process.env.PUBLIC_URL}/images/image-not-found.png`;
     }
 
     const getTimestamp = (time) => {
@@ -20,16 +18,18 @@ const NewsItem = ({article}) => {
         <ListGroup.Item style={{backgroundColor: 'transparent', border: '1px solid darkgray'}}>
             <Row>
                 <Col className='col-auto'>
-                    <Image 
-                        src={urlToImage || thumbnail} 
-                        onError={brokenImageUrl} 
-                        style={{height: '70px', width: '70px', margin: '5px'}} 
-                        thumbnail
-                    />
+                    <a href={url && url} target="__blank">
+                        <Image 
+                            src={urlToImage || `${process.env.PUBLIC_URL}/images/image-not-found.png`} 
+                            onError={brokenImageUrl} 
+                            style={{height: '70px', width: '70px', margin: '5px'}} 
+                            thumbnail
+                        />
+                    </a>
                 </Col>
                 <Col>
-                    <h5 className='mb-0'>{title && title}</h5>
-                    <span style={{fontSize: 'x-small', color: 'grey'}}>{url && url}</span>
+                    <h5 className='mb-0'><a href={url && url} target="__blank">{title && title}</a></h5>
+                    <a href={url && url} target="__blank"><span style={{fontSize: 'x-small', color: 'grey'}}>{url && url}</span></a>
                     <p style={{fontSize: 'small', marginBottom: '0'}}>{description && description}</p>
                     <span style={{fontSize: 'x-small', color: 'grey'}}>Date Published: {publishedAt && getTimestamp(publishedAt)}</span>
                 </Col>

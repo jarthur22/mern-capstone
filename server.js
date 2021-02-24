@@ -5,6 +5,7 @@ const http = require('http');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const newsRoutes = require('./routes/newsRoutes');
+const bugRoutes = require('./routes/bugRoutes');
 
 //use middleware
 dotenv.config();
@@ -17,6 +18,7 @@ connectDB();
 
 //init api routes
 app.use('/api/news', newsRoutes);
+app.use('/api/bugs', bugRoutes);
 
 //all other api requests
 app.use('/api/*', (req, res, next) => {
