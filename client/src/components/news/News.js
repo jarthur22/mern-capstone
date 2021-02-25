@@ -73,7 +73,7 @@ const News = () => {
                     <Card.Body>
                         <Card.Title>Take a look at some relevant articles on advanced JS-based web development.</Card.Title>
                         <Card.Text>
-                            This page uses the free <Card.Link href="https://newsapi.org/">News API</Card.Link> which you can 
+                            This page uses the free <Card.Link href="https://newsapi.org/" target="__blank">News API</Card.Link> which you can 
                             check out yourself to create an account, get an API key, and start playing with it! This particular 
                             application of it shows the most relevant web results relating to fullstack Javascript.
                         </Card.Text>

@@ -15,38 +15,81 @@ const Stack = ({match}) => {
 
     const stackDetails = useSelector(state => state.stackDetails);
     const {section} = stackDetails;
-    console.log(section)
 
     const dispatch = useDispatch();
 
     useEffect(() => {
         if(sectionFromUrl){
-            dispatch(setSection(sectionFromUrl));
+            ['backend', 'frontend', 'hosting'].includes(sectionFromUrl) ? 
+            dispatch(setSection(sectionFromUrl)) : 
+            dispatch(setSection('backend'));
         }
     }, [sectionFromUrl])
 
     useEffect(() => {
-        if(subSectionFromUrl){
-            dispatch(setSubSection(subSectionFromUrl));
-            switch(subSectionFromUrl){
-                case 'server':
-                    dispatch(setPage(ServerOverview));
+        if(subSectionFromUrl && sectionFromUrl){
+            switch(sectionFromUrl){
+                case 'backend':
+                    switch(subSectionFromUrl){
+                        case 'server':
+                            dispatch(setSubSection(subSectionFromUrl));
+                            dispatch(setPage(ServerOverview));
+                            break;
+                        case 'api':
+                            dispatch(setSubSection(subSectionFromUrl));
+                            dispatch(setPage(APIOverview));
+                            break;
+                        case 'database':
+                            dispatch(setSubSection(subSectionFromUrl));
+                            dispatch(setPage(DatabaseOverview));
+                            break;
+                        default:
+                            dispatch(setSubSection('server'));
+                            dispatch(setPage(ServerOverview));
+                            break;
+                    }
                     break;
-                case 'api':
-                    dispatch(setPage(APIOverview));
+                case 'frontend':
+                    switch(subSectionFromUrl){
+                        case 'react':
+                            dispatch(setSubSection(subSectionFromUrl));
+                            break;
+                        case 'redux':
+                            dispatch(setSubSection(subSectionFromUrl));
+                            break;
+                        case 'style':
+                            dispatch(setSubSection(subSectionFromUrl));
+                            break;
+                        default:
+                            dispatch(setSubSection('frontend'));
+                            break;
+                    }
                     break;
-                case 'database':
-                    dispatch(setPage(DatabaseOverview));
+                case 'hosting':
+                    switch(subSectionFromUrl){
+                        case 'heroku':
+                            dispatch(setSubSection(subSectionFromUrl));
+                            break;
+                        case 'github':
+                            dispatch(setSubSection(subSectionFromUrl));
+                            break;
+                        default:
+                            dispatch(setSubSection('hosting'));
+                            break;
+                    }
                     break;
                 default:
+                    dispatch(setSubSection('server'));
+                    dispatch(setPage(ServerOverview));
                     break;
             }
+            
         }
-    }, [subSectionFromUrl])
+    }, [subSectionFromUrl, sectionFromUrl])
 
     return (
         <Container  style={{padding: '0px'}}>
-            <h2 className="py-2" style={{margin: 'auto', textAlign: 'center', width: '100%'}}>
+            <h2 className="py-3" style={{margin: 'auto', textAlign: 'center', width: '100%'}}>
                 MERN Full Stack Breakdown
             </h2>
             <Tab.Container id="section-nav" activeKey={section}>
@@ -77,6 +120,9 @@ const Stack = ({match}) => {
                     </Tab.Content>
                 </Row>
             </Tab.Container>
+            <Row style={{display: 'flex', justifyContent: 'center', marginTop: '1rem'}}>
+                <p><i className="fa fa-github"></i>&nbsp;&nbsp;<a href="https://github.com/jarthur22/mern-capstone" target="__blank">Check out the full project on Github</a></p>
+            </Row>
         </Container>
     )
 }

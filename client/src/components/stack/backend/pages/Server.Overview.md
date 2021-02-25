@@ -6,11 +6,11 @@ Server programs can be entremely difficult to configure. However, Javascript mak
 
 #### Node JS
 
-Node JS is the Javascript framework that runs the server program. It listens at a specific port, handles all requests to the server, serves the frontend to the client, and implements middleware. Every other aspect of the backend is built off of Node JS.
+Node JS is the Javascript runtime environment that runs the server program. It listens at a specific port, handles all requests to the server, serves the frontend to the client, and implements middleware. Every other aspect of the backend is built off of Node JS.
 
 #### Express JS
 
-Express JS is the Node JS library that makes writing and managing the backend so, SO much easier. With Express, you can set up an entire functioning backend with 5 lines of code.
+Express JS is the Node JS library that makes writing and managing the backend so, SO much easier. With Express, you can set up an entire functioning backend with 4 lines of code.
 
 #### Middleware
 
