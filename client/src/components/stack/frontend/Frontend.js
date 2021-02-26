@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import Markdown from '../Markdown';
 import FrontendSideMenu from './FrontendSideMenu';
 
 const Frontend = () => {
@@ -9,8 +10,8 @@ const Frontend = () => {
                 <Col style={{maxWidth: '25vw', padding: '0', maxHeight: '100vh', overflowY: 'scroll'}}>
                     <FrontendSideMenu/>
                 </Col>
-                <Col style={{maxHeight: '100vh'}}>
-
+                <Col style={{maxHeight: '100vh', overflowY: 'scroll'}}>
+                    <Markdown/>
                 </Col>
             </Row>
         </Container>

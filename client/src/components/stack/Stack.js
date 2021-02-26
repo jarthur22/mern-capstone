@@ -9,6 +9,8 @@ import ServerOverview from './backend/pages/Server.Overview.md';
 import APIOverview from './backend/pages/API.Overview.md';
 import DatabaseOverview from './backend/pages/Database.Overview.md';
 
+import ReactOverview from './frontend/pages/React.Overview.md';
+
 const Stack = ({match}) => {
     const sectionFromUrl = match.params.page ? match.params.page.split("-")[0] : "backend";
     const subSectionFromUrl = match.params.page && match.params.page.split("-")[1] ? match.params.page.split("-")[1] : "";
@@ -23,6 +25,27 @@ const Stack = ({match}) => {
             ['backend', 'frontend', 'hosting'].includes(sectionFromUrl) ? 
             dispatch(setSection(sectionFromUrl)) : 
             dispatch(setSection('backend'));
+            if(['backend', 'frontend', 'hosting'].includes(sectionFromUrl)){
+                switch(sectionFromUrl){
+                    case 'backend':
+                        dispatch(setSubSection('server'));
+                        dispatch(setPage(ServerOverview));
+                        break;
+                    case 'frontend':
+                        dispatch(setSubSection('react'));
+                        dispatch(setPage(ReactOverview));
+                        break;
+                    case 'hosting':
+                        dispatch(setSubSection('heroku'));
+                        break;
+                    default:
+                        dispatch(setSubSection('server'));
+                        dispatch(setPage(ServerOverview));
+                        break;
+                }
+            }else{
+                dispatch(setSection('backend'));
+            }
         }
     }, [sectionFromUrl])
 
@@ -53,6 +76,7 @@ const Stack = ({match}) => {
                     switch(subSectionFromUrl){
                         case 'react':
                             dispatch(setSubSection(subSectionFromUrl));
+                            dispatch(setPage(ReactOverview));
                             break;
                         case 'redux':
                             dispatch(setSubSection(subSectionFromUrl));
@@ -61,7 +85,8 @@ const Stack = ({match}) => {
                             dispatch(setSubSection(subSectionFromUrl));
                             break;
                         default:
-                            dispatch(setSubSection('frontend'));
+                            dispatch(setSubSection('react'));
+                            dispatch(setPage(ReactOverview));
                             break;
                     }
                     break;
@@ -74,7 +99,7 @@ const Stack = ({match}) => {
                             dispatch(setSubSection(subSectionFromUrl));
                             break;
                         default:
-                            dispatch(setSubSection('hosting'));
+                            dispatch(setSubSection('heroku'));
                             break;
                     }
                     break;
@@ -96,13 +121,25 @@ const Stack = ({match}) => {
                 <Row className="mb-2">
                     <Nav style={{width: '100%'}} fill variant="pills">
                         <Nav.Item>
-                            <Nav.Link className='stack-page-nav-backend' onClick={() => dispatch(setSection("backend"))} eventKey="backend">Backend</Nav.Link>
+                            <Nav.Link className='stack-page-nav-backend' onClick={() => {
+                                dispatch(setSection("backend"));
+                                dispatch(setSubSection('server'));
+                                dispatch(setPage(ServerOverview));
+                            }} eventKey="backend">Backend</Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
-                            <Nav.Link className='stack-page-nav-frontend' onClick={() => dispatch(setSection("frontend"))} eventKey="frontend">Frontend</Nav.Link>
+                            <Nav.Link className='stack-page-nav-frontend' onClick={() => {
+                                dispatch(setSection("frontend"));
+                                dispatch(setSubSection('react'));
+                                dispatch(setPage(ReactOverview));
+                            }} eventKey="frontend">Frontend</Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
-                            <Nav.Link className='stack-page-nav-hosting' onClick={() => dispatch(setSection("hosting"))} eventKey="hosting">Hosting/Dev Ops</Nav.Link>
+                            <Nav.Link className='stack-page-nav-hosting' onClick={() => {
+                                dispatch(setSection("hosting"));
+                                dispatch(setSubSection('heroku'));
+                                dispatch(setPage(ServerOverview));
+                            }} eventKey="hosting">Hosting/Dev Ops</Nav.Link>
                         </Nav.Item>
                     </Nav>
                 </Row>

@@ -1,6 +1,6 @@
 ### MongoDB Atlas
 
-[MongoDB Atlas](https://cloud.mongodb.com/) is the cloud service for MongoDB, and the preferred method of storing and accessing a MongoDB database, unless you are self-hosting. Its free tier is perfectly usable for professional and hobby projects, and the amount of free tier databases that you can have on one account is virtually limitless.
+[MongoDB Atlas](https://www.mongodb.com/cloud/atlas) is the cloud service for MongoDB, and the preferred method of storing and accessing a MongoDB database, unless you are self-hosting. Its free tier is perfectly usable for professional and hobby projects, and the amount of free tier databases that you can have on one account is virtually limitless.
 
 #### Architecture of the Cloud Database
 

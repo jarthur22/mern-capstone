@@ -11,6 +11,7 @@ import ServerMiddleware from './pages/Server.Middleware.md';
 
 import APIOverview from './pages/API.Overview.md';
 import APIRoutes from './pages/API.Routes.md';
+import APIExternalAPIs from './pages/API.ExternalAPIs.md';
 
 import DatabaseOverview from './pages/Database.Overview.md';
 import DatabaseMongoDBAtlas from './pages/Database.MongoDBAtlas.md';
@@ -35,7 +36,7 @@ const BackendSideMenu = () => {
                 <MenuSection eventKey={"api"} title="API" onClick={() => dispatch(setSubSection('api'))}>
                     <MenuItem onClick={() => dispatch(setPage(APIOverview))}>Overview</MenuItem>
                     <MenuItem onClick={() => dispatch(setPage(APIRoutes))}>Routes</MenuItem>
-                    <MenuItem onClick={() => dispatch(setPage(APIOverview))}>External APIs</MenuItem>
+                    <MenuItem onClick={() => dispatch(setPage(APIExternalAPIs))}>External APIs</MenuItem>
                 </MenuSection>
                 <MenuSection eventKey={"database"} title="Database" onClick={() => dispatch(setSubSection('database'))}>
                     <MenuItem onClick={() => dispatch(setPage(DatabaseOverview))}>Overview</MenuItem>
