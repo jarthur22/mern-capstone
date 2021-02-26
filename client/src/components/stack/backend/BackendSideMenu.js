@@ -13,6 +13,8 @@ import APIOverview from './pages/API.Overview.md';
 import APIRoutes from './pages/API.Routes.md';
 
 import DatabaseOverview from './pages/Database.Overview.md';
+import DatabaseMongoDBAtlas from './pages/Database.MongoDBAtlas.md';
+import DatabaseMongoose from './pages/Database.Mongoose.md';
 
 
 const BackendSideMenu = () => {
@@ -32,16 +34,13 @@ const BackendSideMenu = () => {
                 </MenuSection>
                 <MenuSection eventKey={"api"} title="API" onClick={() => dispatch(setSubSection('api'))}>
                     <MenuItem onClick={() => dispatch(setPage(APIOverview))}>Overview</MenuItem>
-                    <MenuItem onClick={() => dispatch(setPage(APIOverview))}>CRUD REST API</MenuItem>
                     <MenuItem onClick={() => dispatch(setPage(APIRoutes))}>Routes</MenuItem>
-                    <MenuItem onClick={() => dispatch(setPage(APIOverview))}>Websockets</MenuItem>
                     <MenuItem onClick={() => dispatch(setPage(APIOverview))}>External APIs</MenuItem>
                 </MenuSection>
                 <MenuSection eventKey={"database"} title="Database" onClick={() => dispatch(setSubSection('database'))}>
                     <MenuItem onClick={() => dispatch(setPage(DatabaseOverview))}>Overview</MenuItem>
-                    <MenuItem onClick={() => dispatch(setPage(APIOverview))}>NoSQL Databases</MenuItem>
-                    <MenuItem onClick={() => dispatch(setPage(APIOverview))}>Mongoose</MenuItem>
-                    <MenuItem onClick={() => dispatch(setPage(APIOverview))}>MongoDB Atlas</MenuItem>
+                    <MenuItem onClick={() => dispatch(setPage(DatabaseMongoDBAtlas))}>MongoDB Atlas</MenuItem>
+                    <MenuItem onClick={() => dispatch(setPage(DatabaseMongoose))}>Mongoose</MenuItem>
                 </MenuSection>
             </Accordion>
         </Container>

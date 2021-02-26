@@ -94,6 +94,7 @@ const BugReports = () => {
                 }
                 console.log(res.data);
                 setReports(res.data.reports);
+                setMessage(undefined);
                 var pageNumArr = [];
                 for(var i=0; i<(res.data.totalReports / 10); i++){
                     pageNumArr.push(i + 1);
@@ -160,7 +161,7 @@ const BugReports = () => {
                             <Message variant='success'>Thank you for submitting your report!</Message>
                         ) : (
                             <Form className='form-inline' style={{display: 'flex'}} onSubmit={submitHandler}>
-                                <Form.Group className='px-1' controlId='FirstName'>
+                                <Form.Group className='px-1 mt-3' controlId='FirstName'>
                                     <Form.Label className='px-1'>First Name:</Form.Label>
                                     <Form.Control
                                         isInvalid={invalidInput ? true : false}
@@ -169,7 +170,7 @@ const BugReports = () => {
                                         onChange={e => setFirstName(e.target.value)}
                                     ></Form.Control>
                                 </Form.Group>
-                                <Form.Group className='px-1' controlId='LastName'>
+                                <Form.Group className='px-1 mt-3' controlId='LastName'>
                                     <Form.Label className='px-1'>Last Name:</Form.Label>
                                     <Form.Control
                                         isInvalid={invalidInput ? true : false}

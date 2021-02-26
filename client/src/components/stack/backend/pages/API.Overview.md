@@ -1,4 +1,4 @@
-### The CRUD REST API
+### Overview of the CRUD REST API
 
 #### So what even is an API?
 
