@@ -10,6 +10,7 @@ import APIOverview from './backend/pages/API.Overview.md';
 import DatabaseOverview from './backend/pages/Database.Overview.md';
 
 import ReactOverview from './frontend/pages/React.Overview.md';
+import ReduxOverview from './frontend/pages/Redux.Overview.md';
 
 const Stack = ({match}) => {
     const sectionFromUrl = match.params.page ? match.params.page.split("-")[0] : "backend";
@@ -80,6 +81,7 @@ const Stack = ({match}) => {
                             break;
                         case 'redux':
                             dispatch(setSubSection(subSectionFromUrl));
+                            dispatch(setPage(ReduxOverview))
                             break;
                         case 'style':
                             dispatch(setSubSection(subSectionFromUrl));

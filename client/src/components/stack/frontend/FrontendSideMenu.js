@@ -9,7 +9,7 @@ import ReactComponents from './pages/React.Components.md';
 import ReactRouter from './pages/React.Router.md';
 import ReactHooks from './pages/React.Hooks.md';
 
-import APIOverview from '../backend/pages/API.Overview.md';
+import ReduxOverview from './pages/Redux.Overview.md';
 
 import DatabaseOverview from '../backend/pages/Database.Overview.md';
 
@@ -30,8 +30,8 @@ const FrontendSideMenu = () => {
                     <MenuItem onClick={() => dispatch(setPage(ReactHooks))}>Hooks</MenuItem>
                 </MenuSection>
                 <MenuSection eventKey={"redux"} title="Redux" onClick={() => dispatch(setSubSection('redux'))}>
-                    <MenuItem onClick={() => dispatch(setPage(APIOverview))}>Overview</MenuItem>
-                    <MenuItem onClick={() => dispatch(setPage(APIOverview))}>Store</MenuItem>
+                    <MenuItem onClick={() => dispatch(setPage(ReduxOverview))}>Overview</MenuItem>
+                    <MenuItem onClick={() => dispatch(setPage(ReduxOverview))}>Store</MenuItem>
                 </MenuSection>
                 <MenuSection eventKey={"style"} title="Style" onClick={() => dispatch(setSubSection('style'))}>
                     <MenuItem onClick={() => dispatch(setPage(DatabaseOverview))}>Overview</MenuItem>
