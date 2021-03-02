@@ -6,6 +6,8 @@ React Router is what handles the component changes within React, mimicking the b
 
 Why do we even need the router? Can't we just use `<a>` tags and link directly to component pages? Well, no. See, because a React app is technically a single page, the root is the only url that the browser will recognize. When you input a url, the request goers like this: Browser --> DNS --> App Server --> Browser (with some smaller unimportant steps in between). If your url is just https://mern-capstone.herokuapp.com, then the server will be able to serve it up, because the only true page on the app is `index.html`. But if your url is https://mern-capstone.herokuapp.com/stack (and a router isn't set up), you will get an error, because that page exists as a component in the app, not a page on the server.
 
+#### So What Does It Do?
+
 What React Router does is ensure that your extra path in your url is processed *within the app,* not on the server. When the Router is implemented, the server will forward all requests (that are not an API call) to the client, where the Router will pick up the url path and serve up the Component that goes with it. Let's look at the `App.js` file to visualize this:
 
 ```javascript
@@ -47,5 +49,23 @@ Here's what's going on in this file:
 And a few more things to note:
 - The Route for the Home Component has the `exact` option. This basically sets this Route as the default one if you visit the site and don't specify a path. You know how you can visit a website and it automatically takes you to the index.html page? It's that.
 - Notice how the Stack Route has an extra bit to the path: `/:page?`. This does two things:
-    - The `:page` is a parameter that can be tacked onto the path, which we can use in the Stack Component to serve up additional custom data. In this case, the page parameter allows us to show more specific sections of the brerakdown depending on the parameter. E.g., `/stack/backend-api` will automatically redirect you to the the API subsection of the Backend section. Go to https://mern-capstone.herokuapp.com/stack/backend-api and try it!
+    - The `:page` is a parameter that can be tacked onto the path, which we can use in the Stack Component to serve up additional custom data. In this case, the page parameter allows us to show more specific sections of the breakdown depending on the parameter. E.g., `/stack/backend-api` will automatically redirect you to the the API subsection of the Backend section. Go to https://mern-capstone.herokuapp.com/stack/backend-api and try it!
     - The `?` after the parameter denotes that it is optional.
+
+#### Peripherals to Router
+
+In order to utilize the Router fully, we need to use `<Link>` components instead of `<a>` tags. The Header Component, for example, uses Links, with a capital L, instead of links. Like so:
+
+```javascript
+<Nav className="ml-auto">
+    <Link className='nav nav-link' to="/">&nbsp;&nbsp;Home</Link>
+    <Link className='nav nav-link' to="/stack">&nbsp;&nbsp;Stack Breakdown</Link>
+    <Link className='nav nav-link' to="/news">&nbsp;&nbsp;News</Link>
+    <Link className='nav nav-link' to="/history">&nbsp;&nbsp;History</Link>
+    <Link className='nav nav-link' to="/about">&nbsp;&nbsp;About</Link>
+    <Link className='nav nav-link' to="/report">&nbsp;&nbsp;Report A Bug</Link>
+</Nav>
+```
+As you can see, each Link corresponds to a specific path for a Route in the Router.
+
+The other useful thing that using Router and Links instead of straight links does is make it possible to preserve our sitewide state with Redux, but we will go over that more in [the Redux section](/stack/frontend-redux).

@@ -6,6 +6,8 @@ import {useSelector, useDispatch} from 'react-redux';
 //import page refs
 import ReactOverview from './pages/React.Overview.md';
 import ReactComponents from './pages/React.Components.md';
+import ReactRouter from './pages/React.Router.md';
+import ReactHooks from './pages/React.Hooks.md';
 
 import APIOverview from '../backend/pages/API.Overview.md';
 
@@ -24,6 +26,8 @@ const FrontendSideMenu = () => {
                 <MenuSection eventKey={"react"} title="React" onClick={() => dispatch(setSubSection('react'))}>
                     <MenuItem onClick={() => dispatch(setPage(ReactOverview))}>Overview</MenuItem>
                     <MenuItem onClick={() => dispatch(setPage(ReactComponents))}>Components</MenuItem>
+                    <MenuItem onClick={() => dispatch(setPage(ReactRouter))}>Router</MenuItem>
+                    <MenuItem onClick={() => dispatch(setPage(ReactHooks))}>Hooks</MenuItem>
                 </MenuSection>
                 <MenuSection eventKey={"redux"} title="Redux" onClick={() => dispatch(setSubSection('redux'))}>
                     <MenuItem onClick={() => dispatch(setPage(APIOverview))}>Overview</MenuItem>
