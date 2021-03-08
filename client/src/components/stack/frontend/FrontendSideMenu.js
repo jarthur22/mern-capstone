@@ -11,6 +11,8 @@ import ReactHooks from './pages/React.Hooks.md';
 
 import ReduxOverview from './pages/Redux.Overview.md';
 import ReduxStore from './pages/Redux.Store.md';
+import ReduxReducers from './pages/Redux.Reducers.md';
+import ReduxActions from './pages/Redux.Actions.md';
 
 import DatabaseOverview from '../backend/pages/Database.Overview.md';
 
@@ -33,6 +35,8 @@ const FrontendSideMenu = () => {
                 <MenuSection eventKey={"redux"} title="Redux" onClick={() => dispatch(setSubSection('redux'))}>
                     <MenuItem onClick={() => dispatch(setPage(ReduxOverview))}>Overview</MenuItem>
                     <MenuItem onClick={() => dispatch(setPage(ReduxStore))}>Store</MenuItem>
+                    <MenuItem onClick={() => dispatch(setPage(ReduxReducers))}>Reducers</MenuItem>
+                    <MenuItem onClick={() => dispatch(setPage(ReduxActions))}>Actions</MenuItem>
                 </MenuSection>
                 <MenuSection eventKey={"style"} title="Style" onClick={() => dispatch(setSubSection('style'))}>
                     <MenuItem onClick={() => dispatch(setPage(DatabaseOverview))}>Overview</MenuItem>

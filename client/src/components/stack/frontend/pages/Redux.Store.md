@@ -119,3 +119,21 @@ ReactDOM.render(
 ```
 
 And that is how we attach the store that we created to the application. Since the Provider and store encompass the scope of the entire application, we can access and manipulate the store from any component in the application by way of the `useSelector()` and `dispatch()`/Action functions, respectively (Read on for explanations of those).
+
+#### Accessing the state variables in Store from a Component
+
+The process for this is very simple. All we need to do is us the `useSelector()` hook, which grabs the state variables that we need. We just do this in the Component:
+- import the `useSelector` function:
+```javascript
+import {useSelector} from 'react-redux';
+```
+- use it to pull the state that we need:
+```javascript
+const stackDetails = useSelector(state => state.stackDetails);
+```
+- optionally, we can destructure the state object `stackDetails` so that we can just reference the `subSection`.
+```javascript
+const {subSection} = stackDetails;
+```
+
+And now we can just reference it like any other variable. HOWEVER, in order to change it, we need to dispatch an Action: learn more about this in the Redux Action section.
