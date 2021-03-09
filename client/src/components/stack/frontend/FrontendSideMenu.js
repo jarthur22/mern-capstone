@@ -14,7 +14,8 @@ import ReduxStore from './pages/Redux.Store.md';
 import ReduxReducers from './pages/Redux.Reducers.md';
 import ReduxActions from './pages/Redux.Actions.md';
 
-import DatabaseOverview from '../backend/pages/Database.Overview.md';
+import StylingOverview from './pages/Styling.Overview.md';
+import StylingReactstrap from './pages/Styling.Reactstrap.md';
 
 
 const FrontendSideMenu = () => {
@@ -39,8 +40,10 @@ const FrontendSideMenu = () => {
                     <MenuItem onClick={() => dispatch(setPage(ReduxActions))}>Actions</MenuItem>
                 </MenuSection>
                 <MenuSection eventKey={"style"} title="Style" onClick={() => dispatch(setSubSection('style'))}>
-                    <MenuItem onClick={() => dispatch(setPage(DatabaseOverview))}>Overview</MenuItem>
-                    <MenuItem onClick={() => dispatch(setPage(DatabaseOverview))}>Bootstrap</MenuItem>
+                    <MenuItem onClick={() => dispatch(setPage(StylingOverview))}>Overview</MenuItem>
+                    <MenuItem onClick={() => dispatch(setPage(StylingReactstrap))}>Reactstrap</MenuItem>
+                    <MenuItem onClick={() => dispatch(setPage(StylingOverview))}>Bootswatch</MenuItem>
+                    <MenuItem onClick={() => dispatch(setPage(StylingOverview))}>Custom CSS</MenuItem>
                 </MenuSection>
             </Accordion>
         </Container>

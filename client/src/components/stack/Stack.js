@@ -11,6 +11,7 @@ import DatabaseOverview from './backend/pages/Database.Overview.md';
 
 import ReactOverview from './frontend/pages/React.Overview.md';
 import ReduxOverview from './frontend/pages/Redux.Overview.md';
+import StylingOverview from './frontend/pages/Styling.Overview.md';
 
 const Stack = ({match}) => {
     const sectionFromUrl = match.params.page ? match.params.page.split("-")[0] : "backend";
@@ -85,6 +86,7 @@ const Stack = ({match}) => {
                             break;
                         case 'style':
                             dispatch(setSubSection(subSectionFromUrl));
+                            dispatch(setPage(StylingOverview));
                             break;
                         default:
                             dispatch(setSubSection('react'));
